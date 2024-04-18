@@ -1,0 +1,42 @@
+1)
+
+create table EmployeeNew
+(
+	Emp_id int  identity(1,1),
+	FirstName varchar(20) not null,
+	SecondName varchar(20) not null,
+	Email varchar(50) unique,
+	DateOfBirth Date not null,
+	DepartmentID int 
+	Constraint PK_Emp_ID PRIMARY KEY (Emp_ID)
+	Constraint FK_Emp_dep FOREIGN KEY (DepartmentID)
+	REFERENCES DepartmentNew(DeptID)
+
+);
+
+
+Create table DepartmentNew
+(
+		DeptId int Primary key,
+		DeptName varchar(100) Not null
+		);
+
+
+
+2)
+
+alter table EmployeeNew add PhoneNumber  varchar(15) not null;
+
+
+3)
+
+insert into EmployeeNew(Emp_id,FirstName,SecondName,email,DateOfBirth,DepartmentId,PhoneNumber) 
+		values(01,'Glen','Maxwell','Maxi@1819','20-12-1992','22222222'),
+		      (01,'ab','d','Maxi@1819','20-12-1992','22222222'),
+		      (01,'syed','suhel','Maxi@1819','20-12-1992','22222222');
+
+
+
+
+
+
